@@ -2,15 +2,8 @@
   <div class="page">
     <div class="tools">
       <input type="file" @change="handleFileUpload" />
-      <input type="text" name="x" id="x" placeholder="x" v-model="img.x" />
-      <input type="text" name="y" id="y" placeholder="y" v-model="img.y" />
-      <input
-        type="text"
-        name="color"
-        id="color"
-        placeholder="color"
-        v-model="img.color"
-      />
+      <input type="text" name="x" id="x" placeholder="x offset" v-model="img.x" />
+      <input type="text" name="y" id="y" placeholder="y offset" v-model="img.y" />
       <button @click="draw" class="drawimg">Draw Image</button>
     </div>
     <div class="container">
@@ -25,7 +18,6 @@ const { $draw } = useNuxtApp();
 const img = ref({
   x: "0",
   y: "0",
-  color: "#ff6666",
   img: null as ImageData | null,
 });
 
@@ -128,7 +120,7 @@ onMounted(async () => {
     if (data.value) {
       drawColors(data.value);
     }
-  }, 2000);
+  }, 1000);
 });
 
 const drawColors = (colors: { [key: string]: string | null }) => {
