@@ -128,7 +128,7 @@ onMounted(async () => {
     if (data.value) {
       drawColors(data.value);
     }
-  }, 5000);
+  }, 2000);
 });
 
 const drawColors = (colors: { [key: string]: string | null }) => {
