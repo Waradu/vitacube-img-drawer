@@ -1,0 +1,29 @@
+    <input type="file" @change="handleFileUpload" />
+    <div>
+      <label for="horizontalOffset"
+        >Horizontal Offset: {{ state.horizontalOffset }}</label
+      >
+      <br />
+      <input
+        type="range"
+        id="horizontalOffset"
+        min="0"
+        max="80"
+        v-model="state.horizontalOffset"
+      />
+    </div>
+    <div>
+      <label for="verticalOffset"
+        >Vertical Offset: {{ state.verticalOffset }}</label
+      >
+      <br />
+      <input
+        type="range"
+        id="verticalOffset"
+        min="0"
+        max="32"
+        v-model="state.verticalOffset"
+      />
+    </div>
+    <button @click="draw">Draw</button>
+    <br>
